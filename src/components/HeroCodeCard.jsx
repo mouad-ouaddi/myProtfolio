@@ -65,25 +65,25 @@ export default function HeroCodeCard() {
         </motion.span>
 
         <div className="overflow-hidden rounded-2xl border border-line bg-paper shadow-card-lg dark:border-ink-line dark:bg-ink-soft">
-          <div className="flex items-center gap-2 border-b border-line px-4 py-3 dark:border-ink-line">
+          <div className="flex min-w-0 items-center gap-2 border-b border-line px-4 py-3 dark:border-ink-line">
             <span className="size-3 rounded-full bg-[#ff5f56]" aria-hidden="true" />
             <span className="size-3 rounded-full bg-[#ffbd2e]" aria-hidden="true" />
             <span className="size-3 rounded-full bg-[#27c93f]" aria-hidden="true" />
-            <span className="font-mono ml-2 flex items-center gap-1.5 text-xs text-gray-500 dark:text-ink-muted">
-              <Braces className="size-3.5 text-primary dark:text-primary-600" />
-              developer.mouad
+            <span className="font-mono ml-2 flex min-w-0 items-center gap-1.5 text-xs text-gray-500 dark:text-ink-muted">
+              <Braces className="size-3.5 shrink-0 text-primary dark:text-primary-600" />
+              <span className="truncate">developer.mouad</span>
             </span>
           </div>
 
-          <div className="flex gap-0 p-5 sm:p-6">
-            <pre className="font-mono flex flex-col gap-1 text-[13px] leading-6 select-none">
+          <div className="flex overflow-x-auto p-4 sm:p-6">
+            <pre className="font-mono flex shrink-0 flex-col gap-1 text-[11px] leading-6 select-none sm:text-[13px]">
               {LINE_NUMS.map((n) => (
-                <span key={n} className="pr-4 text-right text-gray-300 dark:text-ink-line">
+                <span key={n} className="pr-3 text-right text-gray-300 dark:text-ink-line sm:pr-4">
                   {n}
                 </span>
               ))}
             </pre>
-            <pre className="font-mono text-[13px] leading-6">
+            <pre className="font-mono text-[11px] leading-6 sm:text-[13px]">
               <code>
                 <Token color="text-primary-600">const</Token>{' '}
                 <Token color="text-gray-800 dark:text-mint">developer</Token> = {'{'}{'\n'}

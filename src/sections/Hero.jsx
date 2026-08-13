@@ -73,7 +73,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="relative mt-6 w-64 sm:w-72"
+            className="relative mt-6 w-[60vw] max-w-[15rem] sm:max-w-none sm:w-64 lg:w-72"
           >
             {/* glowing orb behind the image */}
             <motion.div
@@ -87,7 +87,7 @@ export default function Hero() {
             <motion.span
               animate={reduce ? {} : { y: [0, -6, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="font-mono absolute -top-4 -left-4 z-10 flex items-center gap-1.5 rounded-lg border border-line bg-paper px-3 py-1.5 text-xs font-medium text-gray-700 shadow-card dark:border-ink-line dark:bg-ink-soft dark:text-mint"
+              className="font-mono absolute -top-3 -left-2 z-10 flex items-center gap-1.5 rounded-lg border border-line bg-paper px-2.5 py-1.5 text-xs font-medium text-gray-700 shadow-card dark:border-ink-line dark:bg-ink-soft dark:text-mint sm:-top-4 sm:-left-4 sm:px-3"
             >
               <Braces className="size-3.5 text-primary dark:text-primary-600" strokeWidth={2} />
               {p.role}
@@ -97,7 +97,7 @@ export default function Hero() {
             <motion.span
               animate={reduce ? {} : { y: [0, 6, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-              className="font-mono absolute -right-3 -bottom-3 z-10 flex items-center gap-1.5 rounded-lg border border-line bg-paper px-3 py-1.5 text-xs font-medium text-gray-700 shadow-card dark:border-ink-line dark:bg-ink-soft dark:text-mint"
+              className="font-mono absolute -right-2 -bottom-2 z-10 flex items-center gap-1.5 rounded-lg border border-line bg-paper px-2.5 py-1.5 text-xs font-medium text-gray-700 shadow-card dark:border-ink-line dark:bg-ink-soft dark:text-mint sm:-right-3 sm:-bottom-3 sm:px-3"
             >
               <span className="relative flex size-2" aria-hidden="true">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60 dark:bg-primary-600" />
@@ -106,7 +106,7 @@ export default function Hero() {
               {t('hero.card.availableChip')}
             </motion.span>
 
-            <div className="relative overflow-hidden aspect-square w-64 rounded-full border-4 border-paper shadow-[0_0_32px_rgba(6,91,50,0.45)] ring-4 ring-primary/60 dark:border-ink-soft dark:ring-primary-600/60 dark:shadow-[0_0_32px_rgba(11,122,68,0.5)] sm:w-72">
+            <div className="relative aspect-square w-[60vw] max-w-[15rem] overflow-hidden rounded-full border-4 border-paper shadow-[0_0_32px_rgba(6,91,50,0.45)] ring-4 ring-primary/60 dark:border-ink-soft dark:ring-primary-600/60 dark:shadow-[0_0_32px_rgba(11,122,68,0.5)] sm:max-w-none sm:w-64 lg:w-72">
               <img
                 src="/img/hero-rect.png"
                 alt={t('common.alt')}
