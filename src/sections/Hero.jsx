@@ -108,10 +108,10 @@ export default function Hero() {
 
             <div className="relative aspect-square w-[60vw] max-w-[15rem] overflow-hidden rounded-full border-4 border-paper shadow-[0_0_32px_rgba(6,91,50,0.45)] ring-4 ring-primary/60 dark:border-ink-soft dark:ring-primary-600/60 dark:shadow-[0_0_32px_rgba(11,122,68,0.5)] sm:max-w-none sm:w-64 lg:w-72">
               <img
-                src="/img/hero-rect.png"
+                src="/img/hero.webp"
                 alt={t('common.alt')}
-                width={1086}
-                height={1448}
+                width={720}
+                height={960}
                 decoding="async"
                 className="h-full w-full object-cover object-top"
               />

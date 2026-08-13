@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useReducedMotion } from 'framer-motion'
 
 const MAX_COUNT = 240
+const MOBILE_COUNT = 40
 
 export default function Particles() {
   const reduce = useReducedMotion()
@@ -17,12 +18,14 @@ export default function Particles() {
     let width = 0
     let height = 0
     let dpr = 1
+    let isMobile = false
     let mouseX = -9999
     let mouseY = -9999
     const particles = []
 
     const resize = () => {
-      dpr = Math.min(window.devicePixelRatio || 1, 2)
+      isMobile = !window.matchMedia('(hover: hover)').matches
+      dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2)
       width = window.innerWidth
       height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
       canvas.width = width * dpr
@@ -34,17 +37,24 @@ export default function Particles() {
 
     const init = () => {
       particles.length = 0
-      const count = Math.min(MAX_COUNT, Math.max(48, Math.round((width * height) / 6500)))
+      const count = isMobile
+        ? MOBILE_COUNT
+        : Math.min(MAX_COUNT, Math.max(48, Math.round((width * height) / 6500)))
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          r: Math.random() * 1.8 + 0.6,
-          speed: Math.random() * 0.25 + 0.08,
+          r: isMobile
+            ? Math.random() * 1.2 + 0.5
+            : Math.random() * 1.8 + 0.6,
+          speed: isMobile
+            ? Math.random() * 0.18 + 0.05
+            : Math.random() * 0.25 + 0.08,
           sway: Math.random() * 0.4 + 0.12,
           phase: Math.random() * Math.PI * 2,
           alpha: Math.random() * 0.45 + 0.15,
-        })      }
+        })
+      }
     }
 
     let t = 0
@@ -65,26 +75,32 @@ export default function Particles() {
         if (p.x < -12) p.x = width + 12
         if (p.x > width + 12) p.x = -12
 
-        const dx = p.x - mouseX
-        const dy = p.y - mouseY
-        const dist = Math.hypot(dx, dy)
-        const radius = 110
-        if (dist < radius && dist > 0.001) {
-          const force = ((radius - dist) / radius) * 2.2
-          p.x += (dx / dist) * force
-          p.y += (dy / dist) * force
+        if (!isMobile) {
+          const dx = p.x - mouseX
+          const dy = p.y - mouseY
+          const dist = Math.hypot(dx, dy)
+          const radius = 110
+          if (dist < radius && dist > 0.001) {
+            const force = ((radius - dist) / radius) * 2.2
+            p.x += (dx / dist) * force
+            p.y += (dy / dist) * force
+          }
         }
 
         const pulse = 0.5 + 0.5 * Math.sin(t * 0.9 + p.phase * 3)
         const alpha = p.alpha * pulse
-        ctx.save()
-        ctx.shadowColor = `${color}${alpha * 0.9})`
-        ctx.shadowBlur = 8
+
+        if (!isMobile) {
+          ctx.beginPath()
+          ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2)
+          ctx.fillStyle = `${color}${alpha * 0.18})`
+          ctx.fill()
+        }
+
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
         ctx.fillStyle = `${color}${alpha})`
         ctx.fill()
-        ctx.restore()
       }
 
       raf = requestAnimationFrame(tick)
@@ -102,17 +118,12 @@ export default function Particles() {
       mouseX = e.clientX
       mouseY = e.clientY + window.scrollY
     }
-    const onScroll = () => {
-      resize()
-    }
     window.addEventListener('resize', onResize)
-    window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('mousemove', onMove, { passive: true })
 
     return () => {
       cancelAnimationFrame(raf)
       window.removeEventListener('resize', onResize)
-      window.removeEventListener('scroll', onScroll)
       window.removeEventListener('mousemove', onMove)
     }
   }, [reduce])
