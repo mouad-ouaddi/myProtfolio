@@ -1,0 +1,248 @@
+// Translations UI - clés partagées entre composants.
+
+export const texts = {
+  fr: {
+    common: {
+      alt: 'Mouad Ouaddi',
+    },
+    nav: {
+      aria: 'Navigation principale',
+      about: 'À propos',
+      skills: 'Compétences',
+      projects: 'Projets',
+      parcours: 'Parcours',
+      contact: 'Contact',
+    },
+    navbar: {
+      langTitle: 'Changer de langue',
+      openMenu: 'Ouvrir le menu',
+      closeMenu: 'Fermer le menu',
+      light: 'Passer en mode clair',
+      dark: 'Passer en mode sombre',
+    },
+    footer: {
+      navAria: 'Navigation du pied de page',
+      builtWith: '© {year} {name}. Construit avec React & Tailwind CSS.',
+      backTop: 'Retour en haut',
+    },
+    skip: 'Aller au contenu',
+    hero: {
+      hi: 'Salut, je suis',
+      basedIn: 'Basé à {location}.',
+      projectsCta: 'Voir mes projets',
+      contactCta: 'Me contacter',
+      cvCta: 'Télécharger mon CV',
+      cvPreview: 'Prévisualiser mon CV',
+      available: '// disponible pour de nouvelles opportunités',
+      card: {
+        chips: 'code & café',
+        availableChip: 'disponible',
+      },
+    },
+    cvModal: {
+      title: 'Mon CV',
+    },
+    about: {
+      eyebrow: 'À propos',
+      title: 'Qui suis-je',
+      description:
+        'Un développeur full stack focalisé sur la création de produits utiles et évolutifs, avec un code propre et des interfaces soignées.',
+      inBrief: 'En bref',
+      location: 'Localisation',
+      education: 'Formation',
+      outsideCode: 'En dehors du code',
+    },
+    skills: {
+      eyebrow: 'Compétences',
+      title: 'Ma boîte à outils',
+      description:
+        'Les technologies que j’utilise pour concevoir, construire et livrer des applications full stack.',
+      tabsAria: 'Catégories de compétences',
+    },
+    projects: {
+      eyebrow: 'Projets',
+      title: 'Mes réalisations',
+      description:
+        'Une sélection d’applications full stack et d’expériences web que j’ai conçues et développées.',
+      comingSoon: 'Bientôt disponible',
+      soon: 'bientôt',
+      details: 'Détails',
+      detailsAria: 'Voir les détails de {name}',
+      otherProjectsBefore:
+        'D’autres projets sont toujours en préparation. Gardez un œil sur ma page',
+      otherProjectsAfter: 'pour collaborer.',
+      contactWord: 'contact',
+      seeCode: 'Voir le code',
+      linksSoon: 'Les liens seront ajoutés dès qu’ils seront disponibles.',
+      projectLabel: 'Projet · {year}',
+      closeDetails: 'Fermer les détails du projet',
+      close: 'Fermer',
+    },
+    experience: {
+      eyebrow: 'Parcours',
+      title: 'Mon parcours',
+      description:
+        'Éducation, expériences professionnelles et projets qui ont façonné mon parcours de développeur.',
+      education: 'Formation',
+      project: 'Projet',
+      internship: 'Stage',
+      mostRecent: 'Plus récent',
+    },
+    contact: {
+      eyebrow: 'Contact',
+      title: 'Construisons quelque chose ensemble.',
+      intro:
+        'Vous avez un projet en tête, une idée à explorer ou simplement envie de dire bonjour ? Ma boîte de réception est toujours ouverte - je vous réponds dès que possible.',
+      formTitle: 'Envoyer un message',
+      requiredBefore: 'Les champs marqués',
+      requiredAfter: 'sont obligatoires.',
+      name: 'Nom',
+      email: 'Email',
+      message: 'Message',
+      namePlaceholder: 'Votre nom',
+      emailPlaceholder: 'vous@exemple.com',
+      messagePlaceholder: 'Parlez-moi de votre projet…',
+      submit: 'Envoyer le message',
+      sending: 'Envoi…',
+      sendAnother: 'Envoyer un autre message',
+      successTitle: 'Message prêt à partir',
+      successBodyBefore:
+        'Merci de votre message. Connectez un vrai service d’email dans',
+      successBodyAfter: 'pour délivrer ce message - et c’est en ligne.',
+      errorBody:
+        'Une erreur est survenue lors de l’envoi de votre message. Veuillez réessayer.',
+      errors: {
+        nameRequired: 'Veuillez saisir votre nom.',
+        nameShort: 'Le nom doit contenir au moins 2 caractères.',
+        emailRequired: 'Veuillez saisir votre email.',
+        emailInvalid: 'Veuillez saisir une adresse email valide.',
+        messageRequired: 'Veuillez écrire un message.',
+        messageShort: 'Le message doit contenir au moins 10 caractères.',
+      },
+    },
+    mobileMenu: {
+      aria: 'Menu de navigation mobile',
+    },
+  },
+  en: {
+    common: {
+      alt: 'Mouad Ouaddi',
+    },
+    nav: {
+      aria: 'Main navigation',
+      about: 'About',
+      skills: 'Skills',
+      projects: 'Projects',
+      parcours: 'Journey',
+      contact: 'Contact',
+    },
+    navbar: {
+      langTitle: 'Change language',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
+      light: 'Switch to light mode',
+      dark: 'Switch to dark mode',
+    },
+    footer: {
+      navAria: 'Footer navigation',
+      builtWith: '© {year} {name}. Built with React & Tailwind CSS.',
+      backTop: 'Back to top',
+    },
+    skip: 'Skip to content',
+    hero: {
+      hi: 'Hi, I’m',
+      basedIn: 'Based in {location}.',
+      projectsCta: 'View my projects',
+      contactCta: 'Contact me',
+      cvCta: 'Download my CV',
+      cvPreview: 'Preview my CV',
+      available: '// available for new opportunities',
+      card: {
+        chips: 'code & coffee',
+        availableChip: 'available',
+      },
+    },
+    cvModal: {
+      title: 'My CV',
+    },
+    about: {
+      eyebrow: 'About',
+      title: 'Who I am',
+      description:
+        'A full stack developer focused on building useful, scalable products with clean code and polished interfaces.',
+      inBrief: 'In brief',
+      location: 'Location',
+      education: 'Education',
+      outsideCode: 'Outside of code',
+    },
+    skills: {
+      eyebrow: 'Skills',
+      title: 'My toolbox',
+      description:
+        'The technologies I use to design, build and ship full stack applications.',
+      tabsAria: 'Skill categories',
+    },
+    projects: {
+      eyebrow: 'Projects',
+      title: 'My work',
+      description:
+        'A selection of full stack applications and web experiences I designed and built.',
+      comingSoon: 'Coming soon',
+      soon: 'soon',
+      details: 'Details',
+      detailsAria: 'View details of {name}',
+      otherProjectsBefore:
+        'More projects are always in the works. Keep an eye on my',
+      otherProjectsAfter: 'page to collaborate.',
+      contactWord: 'contact',
+      seeCode: 'View code',
+      linksSoon: 'Links will be added as soon as they are available.',
+      projectLabel: 'Project · {year}',
+      closeDetails: 'Close project details',
+      close: 'Close',
+    },
+    experience: {
+      eyebrow: 'Journey',
+      title: 'My journey',
+      description:
+        'Education, professional experiences and projects that shaped me as a developer.',
+      education: 'Education',
+      project: 'Project',
+      internship: 'Internship',
+      mostRecent: 'Most recent',
+    },
+    contact: {
+      eyebrow: 'Contact',
+      title: 'Let’s build something together.',
+      intro:
+        'Got a project in mind, an idea to explore or just want to say hello? My inbox is always open - I’ll get back to you as soon as I can.',
+      formTitle: 'Send a message',
+      requiredBefore: 'Fields marked',
+      requiredAfter: 'are required.',
+      name: 'Name',
+      email: 'Email',
+      message: 'Message',
+      namePlaceholder: 'Your name',
+      emailPlaceholder: 'you@example.com',
+      messagePlaceholder: 'Tell me about your project…',
+      submit: 'Send message',
+      sending: 'Sending…',
+      sendAnother: 'Send another message',
+      successTitle: 'Message ready to go',
+      successBodyBefore: 'Thanks for your message. Connect a real email service in',
+      successBodyAfter: 'to deliver it - and it’s live.',
+      errorBody: 'An error occurred while sending your message. Please try again.',
+      errors: {
+        nameRequired: 'Please enter your name.',
+        nameShort: 'The name must contain at least 2 characters.',
+        emailRequired: 'Please enter your email.',
+        emailInvalid: 'Please enter a valid email address.',
+        messageRequired: 'Please write a message.',
+        messageShort: 'The message must contain at least 10 characters.',
+      },
+    },
+    mobileMenu: {
+      aria: 'Mobile navigation menu',
+    },
+  },
+}

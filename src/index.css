@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #065b32;
+  --color-primary-600: #0b7a44;
+  --color-primary-700: #065b32;
+  --color-primary-800: #043b21;
+  --color-mint: #f1fff4;
+  --color-paper: #ffffff;
+  --color-line: #d6ebdd;
+  --color-ink: #06110b;
+  --color-ink-soft: #0c2116;
+  --color-ink-line: #1b3a2a;
+  --color-ink-muted: #87a796;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --shadow-card: 0 1px 2px rgb(6 17 11 / 0.06), 0 8px 24px -12px rgb(6 17 11 / 0.18);
+  --shadow-card-lg: 0 2px 4px rgb(6 17 11 / 0.06), 0 20px 40px -16px rgb(6 17 11 / 0.28);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-mint);
+    color: #33443b;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    body {
+      cursor: none;
+    }
+  }
+
+  .dark body {
+    background-color: var(--color-ink);
+    color: #b9cdc2;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-primary) 90%, transparent);
+    color: #f1fff4;
+  }
+}
+
+@layer utilities {
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .caret-blink {
+    animation: caret-blink 1s steps(1) infinite;
+  }
+
+  @keyframes caret-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
+}
