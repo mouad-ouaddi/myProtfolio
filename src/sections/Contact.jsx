@@ -83,7 +83,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-28 border-t border-line bg-paper/50 py-20 sm:py-28 dark:border-ink-line dark:bg-ink-soft/30"
+      className="scroll-mt-28 bg-paper/50 py-20 sm:py-28 dark:bg-ink-soft/30"
     >
       <div className="section-shell grid gap-12 lg:grid-cols-2 lg:gap-16">
         <div>

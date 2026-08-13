@@ -11,7 +11,7 @@ export default function Footer() {
   const links = navLinks[lang]
 
   return (
-    <footer className="border-t border-line bg-paper/60 dark:border-ink-line dark:bg-ink-soft/40">
+    <footer className="bg-paper/60 dark:bg-ink-soft/40">
       <div className="section-shell py-12 sm:py-14">
         <div className="flex flex-col items-center gap-8 text-center">
           <a href="#top" className="font-display text-lg font-bold text-gray-900 dark:text-mint">

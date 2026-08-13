@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { ArrowDown, ArrowUpRight } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, Braces } from 'lucide-react'
 import CvModal from '../components/CvModal'
 import HeroCodeCard from '../components/HeroCodeCard'
 import Reveal from '../components/Reveal'
@@ -48,15 +48,6 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-20 sm:pt-44 sm:pb-28">
-      {/* Glassmorphism background layer */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none overflow-hidden"
-        animate={{ opacity: [0, 1], x: [-100, 0, 100, 0]}}
-        transition={{ duration: 3000, delay: 0, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <div className="fixed inset-0 lg:inset-0 lg:w-full lg:h-full bg-white/5 dark:bg-black/5 rounded-3xl opacity-80 lg:opacity-60 border2 lg:border-primary/10 transform lg:translate-x-1/2 lg:translate-y-1/2" />
-      </motion.div>
-
       <div className="section-shell grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
         <div>
           <motion.p
@@ -78,33 +69,54 @@ export default function Hero() {
             <span className="text-primary dark:text-primary-600">.</span>
           </motion.h1>
 
-          <motion.img
-            src="/img/hero-rect.png"
-            alt={t('common.alt')}
-            width={1086}
-            height={1448}
-            decoding="async"
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="relative h-64 w-full rounded-2xl object-cover overflow-hidden shadow-[0_0_24px_rgba(6,91,50,0.5)] sm:w-64 dark:shadow-[0_0_24px_rgba(11,122,68,0.55)]"
-          />
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none opacity-90 sm:opacity-80" />
-
-          {/* Floating decorative elements */}
-          <motion.div
-            className="absolute inset-0 pointer-events-none overflow-hidden"
-            animate={{ y: [0, -20, 0], x: [0, 30, 0] }}
-            transition={{ duration: 20, delay: 0, repeat: Infinity, ease: 'easeInOut' }}
+            className="relative mt-6 w-64 sm:w-72"
           >
-            <motion.svg
-              className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 fill-primary opacity-20 rounded-full animate-spin"
-              style={{ animationDelay: '0s' }}
+            {/* glowing orb behind the image */}
+            <motion.div
+              className="absolute -inset-6 -z-10 rounded-full bg-primary/30 blur-3xl dark:bg-primary-600/30"
+              animate={reduce ? {} : { scale: [1, 1.12, 1], opacity: [0.6, 0.9, 0.6] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              aria-hidden="true"
             />
-            <motion.svg
-              className="absolute bottom-0 right-1/2 -translate-x-1/2 w-12 h-12 fill-primary opacity-10 rounded-full animate-spin"
-              style={{ animationDelay: '1s' }}
-            />
+
+            {/* floating role chip — top left */}
+            <motion.span
+              animate={reduce ? {} : { y: [0, -6, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="font-mono absolute -top-4 -left-4 z-10 flex items-center gap-1.5 rounded-lg border border-line bg-paper px-3 py-1.5 text-xs font-medium text-gray-700 shadow-card dark:border-ink-line dark:bg-ink-soft dark:text-mint"
+            >
+              <Braces className="size-3.5 text-primary dark:text-primary-600" strokeWidth={2} />
+              {p.role}
+            </motion.span>
+
+            {/* floating status chip — bottom right */}
+            <motion.span
+              animate={reduce ? {} : { y: [0, 6, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+              className="font-mono absolute -right-3 -bottom-3 z-10 flex items-center gap-1.5 rounded-lg border border-line bg-paper px-3 py-1.5 text-xs font-medium text-gray-700 shadow-card dark:border-ink-line dark:bg-ink-soft dark:text-mint"
+            >
+              <span className="relative flex size-2" aria-hidden="true">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60 dark:bg-primary-600" />
+                <span className="relative inline-flex size-2 rounded-full bg-primary dark:bg-primary-600" />
+              </span>
+              {t('hero.card.availableChip')}
+            </motion.span>
+
+            <div className="relative overflow-hidden aspect-square w-64 rounded-full border-4 border-paper shadow-[0_0_32px_rgba(6,91,50,0.45)] ring-4 ring-primary/60 dark:border-ink-soft dark:ring-primary-600/60 dark:shadow-[0_0_32px_rgba(11,122,68,0.5)] sm:w-72">
+              <img
+                src="/img/hero-rect.png"
+                alt={t('common.alt')}
+                width={1086}
+                height={1448}
+                decoding="async"
+                className="h-full w-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" aria-hidden="true" />
+            </div>
           </motion.div>
 
           <motion.p

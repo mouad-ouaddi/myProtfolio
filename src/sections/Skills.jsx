@@ -63,7 +63,7 @@ export default function Skills() {
   const category = categories.find((c) => c.id === selected)
 
   return (
-    <section id="skills" className="scroll-mt-28 border-y border-line bg-paper/50 py-20 sm:py-28 dark:border-ink-line dark:bg-ink-soft/30">
+    <section id="skills" className="scroll-mt-28 bg-paper/50 py-20 sm:py-28 dark:bg-ink-soft/30">
       <div className="section-shell">
         <SectionHeading
           eyebrow={t('skills.eyebrow')}

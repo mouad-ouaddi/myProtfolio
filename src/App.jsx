@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion'
 import BackToTop from './components/BackToTop'
-import Background from './components/Background'
+import Particles from './components/Particles'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import ScrollProgress from './components/ScrollProgress'
-import Spotlight from './components/Spotlight'
 import CustomCursor from './components/CustomCursor'
 import { useTheme } from './hooks/useTheme'
 import { useT } from './i18n'
@@ -21,7 +20,7 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen">
-      <Background />
+      <Particles />
       <a
         href="#main"
         className="sr-only z-[80] rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-mint focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
@@ -31,7 +30,6 @@ export default function App() {
 
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <ScrollProgress />
-      <Spotlight />
       <CustomCursor />
 
       <motion.main
