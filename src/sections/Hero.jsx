@@ -48,6 +48,15 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-20 sm:pt-44 sm:pb-28">
+      {/* Glassmorphism background layer */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+        animate={{ opacity: [0, 1], x: [-100, 0, 100, 0]}}
+        transition={{ duration: 3000, delay: 0, repeat: Infinity, ease: 'easeInOut' }}
+      >
+        <div className="fixed inset-0 lg:inset-0 lg:w-full lg:h-full bg-white/5 dark:bg-black/5 rounded-3xl opacity-80 lg:opacity-60 border2 lg:border-primary/10 transform lg:translate-x-1/2 lg:translate-y-1/2" />
+      </motion.div>
+
       <div className="section-shell grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
         <div>
           <motion.p
@@ -78,8 +87,25 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="mt-6 h-auto w-52 rounded-2xl border-2 border-primary object-cover shadow-[0_0_24px_rgba(6,91,50,0.5)] sm:w-64 dark:shadow-[0_0_24px_rgba(11,122,68,0.55)]"
+            className="relative h-64 w-full rounded-2xl object-cover overflow-hidden shadow-[0_0_24px_rgba(6,91,50,0.5)] sm:w-64 dark:shadow-[0_0_24px_rgba(11,122,68,0.55)]"
           />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-black/60 via-transparent to-transparent pointer-events-none opacity-90 sm:opacity-80" />
+
+          {/* Floating decorative elements */}
+          <motion.div
+            className="absolute inset-0 pointer-events-none overflow-hidden"
+            animate={{ y: [0, -20, 0], x: [0, 30, 0] }}
+            transition={{ duration: 20, delay: 0, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <motion.svg
+              className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 fill-primary opacity-20 rounded-full animate-spin"
+              style={{ animationDelay: '0s' }}
+            />
+            <motion.svg
+              className="absolute bottom-0 right-1/2 -translate-x-1/2 w-12 h-12 fill-primary opacity-10 rounded-full animate-spin"
+              style={{ animationDelay: '1s' }}
+            />
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
