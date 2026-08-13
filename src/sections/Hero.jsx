@@ -63,7 +63,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.12 }}
-            className="font-display mt-2 text-5xl leading-[1.05] font-extrabold tracking-tight text-balance text-gray-900 sm:text-6xl dark:text-mint"
+            className="font-display mt-2 text-center text-5xl leading-[1.05] font-extrabold tracking-tight text-balance text-gray-900 sm:text-left sm:text-6xl dark:text-mint"
           >
             {profile.name}
             <span className="text-primary dark:text-primary-600">.</span>
@@ -73,7 +73,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.16 }}
-            className="relative mt-6 w-[60vw] max-w-[15rem] sm:max-w-none sm:w-64 lg:w-72"
+            className="relative mx-auto mt-6 w-[60vw] max-w-[15rem] sm:mx-0 sm:max-w-none sm:w-64 lg:w-72"
           >
             {/* glowing orb behind the image */}
             <motion.div

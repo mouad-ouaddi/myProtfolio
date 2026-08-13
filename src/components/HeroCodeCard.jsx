@@ -50,7 +50,7 @@ export default function HeroCodeCard() {
         <motion.span
           animate={reduce ? {} : { y: [0, -8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-          className="font-mono absolute -top-5 -left-4 z-10 hidden items-center gap-1.5 rounded-lg border border-line bg-paper px-3 py-1.5 text-xs text-gray-700 shadow-card sm:flex dark:border-ink-line dark:bg-ink-soft dark:text-mint"
+          className="font-mono absolute -top-5 -left-4 z-10 flex items-center gap-1.5 rounded-lg border border-line bg-paper px-3 py-1.5 text-xs text-gray-700 shadow-card dark:border-ink-line dark:bg-ink-soft dark:text-mint"
         >
           <Coffee className="size-3.5 text-primary dark:text-primary-600" strokeWidth={2} />
           {t('hero.card.chips')}
@@ -58,7 +58,7 @@ export default function HeroCodeCard() {
         <motion.span
           animate={reduce ? {} : { y: [0, 8, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-          className="font-mono absolute -right-4 -bottom-5 z-10 hidden items-center gap-1.5 rounded-lg border border-line bg-paper px-3 py-1.5 text-xs text-gray-700 shadow-card sm:flex dark:border-ink-line dark:bg-ink-soft dark:text-mint"
+          className="font-mono absolute -right-4 -bottom-5 z-10 flex items-center gap-1.5 rounded-lg border border-line bg-paper px-3 py-1.5 text-xs text-gray-700 shadow-card dark:border-ink-line dark:bg-ink-soft dark:text-mint"
         >
           <GithubIcon className="size-3.5 text-primary dark:text-primary-600" />
           {t('hero.card.availableChip')}
