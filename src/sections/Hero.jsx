@@ -54,7 +54,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.05 }}
-            className="font-mono text-sm text-primary dark:text-primary-600"
+            className="font-mono text-center text-sm text-primary sm:text-left dark:text-primary-600"
           >
             {t('hero.hi')}
           </motion.p>
@@ -123,7 +123,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-display mt-4 text-xl font-semibold text-gray-800 sm:text-2xl dark:text-ink-muted"
+            className="font-display mt-4 text-center text-xl font-semibold text-gray-800 sm:text-left sm:text-2xl dark:text-ink-muted"
           >
             {text}
             {showCaret && (
