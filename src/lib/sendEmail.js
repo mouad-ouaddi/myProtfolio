@@ -1,39 +1,26 @@
 // ---------------------------------------------------------------------------
-// EMAIL SERVICE STUB
+// EMAIL SERVICE - Own backend (/api/send)
 // ---------------------------------------------------------------------------
-// This module intentionally does NOT send emails yet. It is the single place
-// to plug in a real service later (EmailJS, Resend, a backend endpoint, etc.).
-//
-// To connect a real service:
-//   1. Replace the body of `sendMessage` with your provider's call.
-//   2. Keep the same signature so the Contact section needs no changes.
-//   3. Remove the artificial delay and keep the return contract:
-//      { ok: boolean, error?: string }
+// Sends contact messages through the Vercel serverless function in api/send.js
+// (Nodemailer + Gmail SMTP). Keeps the same signature/contract so Contact.jsx
+// needs no changes: { ok: boolean, error?: string }
 // ---------------------------------------------------------------------------
 
-/**
- * Sends a contact message.
- * @param {{ name: string, email: string, message: string }} payload
- * @returns {Promise<{ ok: boolean, error?: string }>}
- */
 export async function sendMessage({ name, email, message }) {
-  // TODO: connect a real email/API service here.
-  // Example (EmailJS):
-  //   await emailjs.send('YOUR_SERVICE', 'YOUR_TEMPLATE', { name, email, message })
-  //
-  // Example (fetch to your own backend):
-  //   const res = await fetch('/api/contact', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify({ name, email, message }),
-  //   })
-  //   if (!res.ok) throw new Error('Request failed')
+  try {
+    const res = await fetch('/api/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message }),
+    })
 
-  void name
-  void email
-  void message
+    const data = await res.json()
+    if (!res.ok || !data.ok) {
+      return { ok: false, error: data.error || `Request failed (${res.status})` }
+    }
 
-  await new Promise((resolve) => setTimeout(resolve, 800))
-
-  return { ok: true }
+    return { ok: true }
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : 'Network error' }
+  }
 }

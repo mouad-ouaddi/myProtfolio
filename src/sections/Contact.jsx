@@ -142,11 +142,7 @@ export default function Contact() {
                     {t('contact.successTitle')}
                   </h3>
                   <p className="mt-2 max-w-sm text-sm text-gray-600 dark:text-ink-muted">
-                    {t('contact.successBodyBefore')}{' '}
-                    <code className="font-mono text-xs text-primary dark:text-primary-600">
-                      src/lib/sendEmail.js
-                    </code>{' '}
-                    {t('contact.successBodyAfter')}
+                    {t('contact.successBody')}
                   </p>
                   <button
                     type="button"

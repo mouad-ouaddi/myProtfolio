@@ -105,10 +105,8 @@ export const texts = {
       submit: 'Envoyer le message',
       sending: 'Envoi…',
       sendAnother: 'Envoyer un autre message',
-      successTitle: 'Message prêt à partir',
-      successBodyBefore:
-        'Merci de votre message. Connectez un vrai service d’email dans',
-      successBodyAfter: 'pour délivrer ce message - et c’est en ligne.',
+      successTitle: 'Message envoyé',
+      successBody: 'Merci pour votre message ! Je vous répondrai très vite.',
       errorBody:
         'Une erreur est survenue lors de l’envoi de votre message. Veuillez réessayer.',
       errors: {
@@ -228,9 +226,8 @@ export const texts = {
       submit: 'Send message',
       sending: 'Sending…',
       sendAnother: 'Send another message',
-      successTitle: 'Message ready to go',
-      successBodyBefore: 'Thanks for your message. Connect a real email service in',
-      successBodyAfter: 'to deliver it - and it’s live.',
+      successTitle: 'Message sent',
+      successBody: 'Thanks for your message! I\'ll get back to you soon.',
       errorBody: 'An error occurred while sending your message. Please try again.',
       errors: {
         nameRequired: 'Please enter your name.',
